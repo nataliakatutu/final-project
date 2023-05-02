@@ -9,19 +9,19 @@ export default class App extends React.Component {
       activeIndex: 0,
       carouselItems: [
         {
-          title: 'Item 1',
-          text: 'Text 1',
           image: require('../../assets/icons/DL1.jpg'),
         },
         {
-          title: 'Item 2',
-          text: 'Text 2',
           image: require('../../assets/icons/DL2.jpg'),
         },
         {
-          title: 'Item 3',
-          text: 'Text 3',
           image: require('../../assets/icons/DL3.jpg'),
+        },
+        {
+          image: require('../../assets/icons/DL4.jpg'),
+        },
+        {
+          image: require('../../assets/icons/DL5.jpg'),
         },
       ],
     };

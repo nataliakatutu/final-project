@@ -9,6 +9,7 @@ import {
 import React from 'react';
 import {Home, Search, DanauLinow} from '../../assets';
 import SlideGambar from './slidegambar';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {SliderBox} from 'react-native-image-slider-box';
 
 const PagesDanauLinow = ({navigation}) => {
@@ -40,7 +41,9 @@ const PagesDanauLinow = ({navigation}) => {
         </View>
       </View>
       <View style={styles.card}>
-        <Text style={styles.cardTitle}>Deskripsi</Text>
+        <View style={styles.cardTitleContainer}>
+          <Text style={styles.cardTitle}>Deskripsi</Text>
+        </View>
         <Text style={styles.cardContent}>
           Danau Linouw adalah sebuah danau vulkanik yang terletak diluar
           Tomohon, dekat Manado, Indonesia. Beberapa lubang hidrotermal
@@ -48,7 +51,16 @@ const PagesDanauLinow = ({navigation}) => {
           yang berubah dari danau berarti warnanya sering berubah warna, mulai
           dari merah, hijau tua, dan bahkan biru gelap.
         </Text>
+        <View style={styles.ratingContainer}>
+          <FontAwesome name="star" style={styles.ratingStar} />
+          <FontAwesome name="star" style={styles.ratingStar} />
+          <FontAwesome name="star" style={styles.ratingStar} />
+          <FontAwesome name="star" style={styles.ratingStar} />
+          <FontAwesome name="star-half-empty" style={styles.ratingStar} />
+          <Text style={styles.ratingText}>4.5</Text>
+        </View>
       </View>
+
       <SlideGambar />
     </View>
   );
@@ -90,11 +102,26 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 25,
     marginTop: -25,
+    marginBottom: -15,
   },
   cardTitle: {
     fontSize: 22,
     fontFamily: 'Poppins-Bold',
     marginBottom: 5,
+  },
+  ratingContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  ratingStar: {
+    fontSize: 15,
+    color: '#FFA500',
+    marginRight: 5,
+  },
+  ratingText: {
+    fontSize: 16,
+    fontFamily: 'Poppins-Medium',
+    color: '#FFA500',
   },
   cardContent: {
     fontSize: 15,
