@@ -9,6 +9,7 @@ import {
 import React from 'react';
 import {Home, Search, DanauLinow} from '../../assets';
 import SlideGambar from './slidegambar';
+import {SliderBox} from 'react-native-image-slider-box';
 
 const PagesDanauLinow = ({navigation}) => {
   return (
