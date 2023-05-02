@@ -2,6 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {PagesDanauLinow} from './pages';
+import {PagesPulauLembeh} from './pages';
 
 //Function Component
 const Stack = createNativeStackNavigator();
