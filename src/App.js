@@ -1,21 +1,13 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {PagesDanauLinow} from './pages';
-import {PagesPulauLembeh} from './pages';
+import Routers from './routers';
+import FlashMessage from 'react-native-flash-message';
 
-//Function Component
-const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="PagesDanauLinow"
-          component={PagesDanauLinow}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
+      <Routers />
+      <FlashMessage position="top" />
     </NavigationContainer>
   );
 };

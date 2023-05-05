@@ -1,3 +1,4 @@
 import PagesDanauLinow from './PagesDanauLinow';
 import PagesPulauLembeh from './PagesPulauLembeh';
-export {PagesDanauLinow, PagesPulauLembeh};
+import SignIn from './signin';
+export {PagesDanauLinow, PagesPulauLembeh, SignIn};
