@@ -5,5 +5,15 @@ import DanauLinow from './DanauLinow.svg';
 import PulauLembeh from './PulauLembeh.svg';
 import PulauLihaga from './PulauLihaga.svg';
 import Logo from './Logo.svg';
+import Pall from './Pall.svg';
 
-export {Search, Home, IconBack, DanauLinow, PulauLembeh, PulauLihaga, Logo};
+export {
+  Search,
+  Home,
+  IconBack,
+  DanauLinow,
+  PulauLembeh,
+  PulauLihaga,
+  Logo,
+  Pall,
+};
