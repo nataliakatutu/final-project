@@ -6,6 +6,7 @@ import PulauLembeh from './PulauLembeh.svg';
 import PulauLihaga from './PulauLihaga.svg';
 import Logo from './Logo.svg';
 import Pall from './Pall.svg';
+import Bunaken from './Bunaken.svg';
 
 export {
   Search,
@@ -16,4 +17,5 @@ export {
   PulauLihaga,
   Logo,
   Pall,
+  Bunaken,
 };
