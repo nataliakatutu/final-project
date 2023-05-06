@@ -7,12 +7,12 @@ import {
     ScrollView,
   } from 'react-native';
   import React from 'react';
-  import {Home, Search, Lahendong} from '../../assets';
+  import {Home, Search, TamanNasional} from '../../assets';
   import SlideGambar from './slidegambar';
   import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
   import FontAwesome from 'react-native-vector-icons/FontAwesome';
   
-  const Lahendong = ({navigation}) => {
+  const TamanNasional = ({navigation}) => {
     return (
       <View style={styles.container}>
         <StatusBar backgroundColor={'#0000'} barStyle={'dark-content'} />
@@ -29,7 +29,7 @@ import {
           <Search />
         </View>
         <View>
-          <Lahendong />
+          <TamanNasional />
           <View
             style={{
               position: 'absolute',
@@ -37,7 +37,7 @@ import {
               left: 0,
               right: 0,
             }}>
-            <Text style={styles.textPict}>Pulau Lembeh</Text>
+            <Text style={styles.textPict}>TamanNasional</Text>
           </View>
         </View>
         <View style={styles.card}>
@@ -45,8 +45,8 @@ import {
             <Text style={styles.cardTitle}>Deskripsi</Text>
           </View>
           <Text style={styles.cardContent}>
-          Hutan pinus Lahendong merupakan salah satu wisata alam menakjubkan di Tomohon, Sulawesi Utara.
-          Kawasan hijau ini terlihat indah dengan pemandangan hutan pinus dan juga pemandian air panas.
+          Taman Nasional Tangkoko merupakan salah satu destinasi wisata menarik dan seru yang ada di Sulawesi Utara.
+          Taman Nasional ini menjadi habitat bagi hewan- hewan endemik yang dilindungi.
           </Text>
           <View style={styles.ratingContainer}>
             <FontAwesome name="star" style={styles.ratingStar} />
@@ -63,7 +63,7 @@ import {
     );
   };
   
-  export default Lahendong;
+  export default TamanNasional;
   
   const styles = StyleSheet.create({
     container: {
