@@ -9,30 +9,28 @@ import {
   TextInput,
 } from 'react-native';
 import React from 'react';
-import {Home, Search, Pall} from '../../assets';
-import {IconBack} from '../../assets';
+import {Home, Search, Pall, IconBack, IconLove} from '../../assets';
 import SlideGambar from './slidegambar';
 import Komentar from './komentar';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
-const PagesPantaiPall = ({navigation}) => {
+const SplashScreen = ({navigation}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
         <StatusBar backgroundColor={'#0000'} barStyle={'dark-content'} />
 
         {/* <View style={styles.navBar}>
-        <TouchableOpacity
-          onPress={() => this.props.navigation.goBack()}
-          activeOpacity={0.7}>
-          <View>
-            <Home />
-          </View>
-        </TouchableOpacity>
-        <Text style={styles.namaapp}>BAPONTAR</Text>
-        <Search />
-      </View> */}
+          <TouchableOpacity
+            onPress={() => this.props.navigation.goBack()}
+            activeOpacity={0.7}>
+            <View>
+              <Home />
+            </View>
+          </TouchableOpacity>
+          <Text style={styles.namaapp}>BAPONTAR</Text>
+          <Search />
+        </View> */}
         <View>
           <Pall />
           <View
@@ -92,7 +90,7 @@ const PagesPantaiPall = ({navigation}) => {
   );
 };
 
-export default PagesPantaiPall;
+export default SplashScreen;
 
 const styles = StyleSheet.create({
   container: {

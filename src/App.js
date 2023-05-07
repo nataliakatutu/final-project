@@ -7,7 +7,6 @@ const App = () => {
   return (
     <NavigationContainer>
       <Routers />
-      <FlashMessage position="top" />
     </NavigationContainer>
   );
 };
