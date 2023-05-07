@@ -31,13 +31,14 @@ const styles = StyleSheet.create({
     paddingLeft: 24,
     paddingVertical: 38,
     backgroundColor: 'white',
-    flexDirection: 'row',
     alignItems: 'center',
   },
   text: {
-    fontSize: 22,
-    fontFamily: 'Poppins-Medium',
+    fontSize: 30,
+    fontFamily: 'Poppins-Bold',
     color: 'black',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   back: {
     padding: 10,

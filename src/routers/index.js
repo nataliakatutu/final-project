@@ -1,12 +1,6 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {
-  PagesDanauLinow,
-  SignIn,
-  PagesPantaiPall,
-  Home,
-  PagesBunaken,
-} from '../pages';
+import {PagesDanauLinow, SignIn, SignUp, SplashScreen} from '../pages';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,30 +8,25 @@ const Routers = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="SplashScreen"
+        component={SplashScreen}
         options={{headerShown: false}}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         name="SignIn"
         component={SignIn}
         options={{headerShown: false}}
-      /> */}
-      {/* <Stack.Screen
-        name="PagesBunaken"
-        component={PagesBunaken}
+      />
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
         options={{headerShown: false}}
-      /> */}
-      {/* <Stack.Screen
+      />
+      <Stack.Screen
         name="PagesDanauLinow"
         component={PagesDanauLinow}
         options={{headerShown: false}}
-      /> */}
-      {/* <Stack.Screen
-        name="PagesPantaiPall"
-        component={PagesPantaiPall}
-        options={{headerShown: false}}
-      /> */}
+      />
     </Stack.Navigator>
   );
 };

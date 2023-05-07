@@ -3,16 +3,18 @@ import React from 'react';
 import {Button, Header, TextInput} from '../../components';
 import Gap from '../../components/atoms/Gap';
 import {Logo} from '../../assets';
-const SignIn = ({navigation}) => {
+const SignUp = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header title="WELCOME" />
+      <Header title="Sign Up" />
       <View style={styles.contentWrapper}>
         <View style={styles.logo}>
           <Logo />
         </View>
         <Gap height={90} />
         <View class="padding" style={{paddingBottom: 50}}>
+          <TextInput title="Full Name" placeholder="Type your full name" />
+          <Gap height={16} />
           <TextInput
             title="Email Address"
             placeholder="Type your email address"
@@ -20,17 +22,12 @@ const SignIn = ({navigation}) => {
           <Gap height={16} />
           <TextInput title="Password" placeholder="Type your password" />
           <Gap height={60} />
+
           <Button
-            title="Sign In"
+            title="Sign Up"
             color="#92F0F6"
-            onPress={() => navigation.navigate('Home')}
-          />
-          <Gap height={20} />
-          <Button
-            title="Create New Account"
-            color="#8D92A3"
-            textColor="white"
-            onPress={() => navigation.navigate('SignUp')}
+            textColor="black"
+            onPress={() => navigation.navigate('SignIn')}
           />
         </View>
       </View>
@@ -38,7 +35,7 @@ const SignIn = ({navigation}) => {
   );
 };
 
-export default SignIn;
+export default SignUp;
 
 const styles = StyleSheet.create({
   page: {
