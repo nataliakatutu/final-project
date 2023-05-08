@@ -11,7 +11,7 @@ const SplashScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Logo />
-      <Text style={styles.text}>Money Tracker</Text>
+      <Text style={styles.text}>bapontar</Text>
     </View>
   );
 };
@@ -26,8 +26,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 32,
+    fontSize: 35,
     fontFamily: 'Poppins-Medium',
     color: 'black',
+    paddingTop: 10,
   },
 });

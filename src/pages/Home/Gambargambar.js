@@ -1,133 +1,103 @@
-import React from 'react';
-import {View, SafeAreaView, StyleSheet, Image} from 'react-native';
-import Carousel from 'react-native-snap-carousel';
+import React, {useRef, useState, useEffect} from 'react';
+import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
+import {
+  View,
+  Text,
+  Dimensions,
+  StyleSheet,
+  TouchableOpacity,
+  Platform,
+  illustration,
+} from 'react-native';
 
-const data = [
+const ENTRIES1 = [
   {
-    id: '1',
-    image: require('../../assets/icons/Bunaken.jpg'),
-    title: 'Image 1',
+    title: 'Beautiful and dramatic Antelope Canyon',
+    subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+    illustration:
+      'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1549881406/rzqo374p06eopqj2j1gw.jpg',
   },
   {
-    id: '2',
-    image: require('../../assets/icons/DL1.jpg'),
-    title: 'Image 2',
+    title: 'Earlier this morning, NYC',
+    subtitle: 'Lorem ipsum dolor sit amet',
+    illustration: 'https://i.imgur.com/UPrs1EWl.jpg',
   },
   {
-    id: '3',
-    image: require('../../assets/icons/lihaga.jpg'),
-    title: 'Image 3',
+    title: 'White Pocket Sunset',
+    subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
+    illustration: 'https://i.imgur.com/MABUbpDl.jpg',
   },
   {
-    id: '4',
-    image: require('../../assets/icons/PL.jpg'),
-    title: 'Image 4',
+    title: 'Acrocorinth, Greece',
+    subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
+    illustration: 'https://i.imgur.com/KZsmUi2l.jpg',
   },
   {
-    id: '5',
-    image: require('../../assets/icons/TN.jpg'),
-    title: 'Image 5',
-  },
-  {
-    id: '6',
-    image: require('../../assets/icons/BK.jpg'),
-    title: 'Image 6',
-  },
-  {
-    id: '7',
-    image: require('../../assets/icons/Lahe.jpg'),
-    title: 'Image 7',
-  },
-  {
-    id: '8',
-    image: require('../../assets/icons/BD.jpg'),
-    title: 'Image 8',
-  },
-  {
-    id: '9',
-    image: require('../../assets/icons/pall.jpg'),
-    title: 'Image 9',
-  },
-  {
-    id: '10',
-    image: require('../../assets/icons/benteng.jpg'),
-    title: 'Image 10',
+    title: 'The lone tree, majestic landscape of New Zealand',
+    subtitle: 'Lorem ipsum dolor sit amet',
+    illustration: 'https://i.imgur.com/2nCt3Sbl.jpg',
   },
 ];
+const {width: screenWidth} = Dimensions.get('window');
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeSlide: 0,
-    };
-    this.renderItem = this.renderItem.bind(this);
-  }
+const MyCarousel = props => {
+  const [entries, setEntries] = useState([]);
+  const carouselRef = useRef(null);
 
-  renderItem({item, index}) {
+  useEffect(() => {
+    setEntries(ENTRIES1);
+  }, []);
+
+  const renderItem = ({item, index}, parallaxProps) => {
     return (
-      <View style={styles.slide}>
-        <Image source={item.image} style={styles.image} />
+      <View style={styles.item}>
+        <ParallaxImage
+          source={{uri: item.illustration}}
+          containerStyle={styles.imageContainer}
+          style={styles.image}
+          parallaxFactor={0.4}
+          {...parallaxProps}
+        />
+        <Text style={styles.title} numberOfLines={2}>
+          {item.title}
+        </Text>
       </View>
     );
-  }
+  };
 
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Carousel
-          data={data}
-          renderItem={this.renderItem}
-          sliderWidth={300}
-          itemWidth={250}
-          onSnapToItem={index => this.setState({activeSlide: index})}
-        />
-        <View style={styles.pagination}>
-          {data.map((_, index) => (
-            <View
-              key={index}
-              style={[
-                styles.paginationDot,
-                this.state.activeSlide === index && styles.paginationDotActive,
-              ]}
-            />
-          ))}
-        </View>
-      </SafeAreaView>
-    );
-  }
-}
+  return (
+    <View style={styles.container}>
+      <Carousel
+        ref={carouselRef}
+        sliderWidth={screenWidth}
+        sliderHeight={screenWidth}
+        itemWidth={screenWidth - 60}
+        data={entries}
+        renderItem={renderItem}
+        hasParallaxImages={true}
+      />
+    </View>
+  );
+};
+
+export default MyCarousel;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  slide: {
-    borderRadius: 10,
-    overflow: 'hidden',
-    width: 250,
-    height: 150,
+  item: {
+    width: screenWidth - 60,
+    height: screenWidth - 60,
+  },
+  imageContainer: {
+    flex: 1,
+    marginBottom: Platform.select({ios: 0, android: 1}), // Prevent a random Android rendering issue
+    backgroundColor: 'white',
+    borderRadius: 8,
   },
   image: {
-    flex: 1,
+    ...StyleSheet.absoluteFillObject,
     resizeMode: 'cover',
-  },
-  pagination: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 20,
-  },
-  paginationDot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    marginHorizontal: 6,
-    backgroundColor: '#999',
-  },
-  paginationDotActive: {
-    backgroundColor: '#333',
   },
 });
