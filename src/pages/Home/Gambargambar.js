@@ -13,30 +13,74 @@ import {
 
 const ENTRIES1 = [
   {
+    id: 1,
     title: 'Benteng Moraya',
     subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
     illustration:
       'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1549881406/rzqo374p06eopqj2j1gw.jpg',
   },
   {
-    title: 'Earlier this morning, NYC',
+    id: 2,
+    title: 'Bukit Doa',
     subtitle: 'Lorem ipsum dolor sit amet',
-    illustration: 'https://i.imgur.com/UPrs1EWl.jpg',
+    illustration:
+      'https://traverse.id/wp-content/uploads/2020/01/Bukitdoamawahu5.jpg',
   },
   {
-    title: 'White Pocket Sunset',
+    id: 3,
+    title: 'Bukit Kasih',
     subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
-    illustration: 'https://i.imgur.com/MABUbpDl.jpg',
+    illustration:
+      'https://wisato.id/wp-content/uploads/2020/05/Bukit-Kasih-Kanonang-8.jpg',
   },
   {
-    title: 'Acrocorinth, Greece',
+    id: 4,
+    title: 'Bunaken',
     subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-    illustration: 'https://i.imgur.com/KZsmUi2l.jpg',
+    illustration:
+      'https://mundomaya.travel/wp-content/uploads/2021/07/Taman-Nasional-Bunaken-Taman-Laut-Bunaken.jpg',
   },
   {
-    title: 'The lone tree, majestic landscape of New Zealand',
+    id: 5,
+    title: 'Danau Linow',
     subtitle: 'Lorem ipsum dolor sit amet',
-    illustration: 'https://i.imgur.com/2nCt3Sbl.jpg',
+    illustration:
+      'https://cdn.idntimes.com/content-images/community/2022/02/20220220-214114-329ae2b286ff7799fbbec7d4597d307a-a6b07eba2c9b1ebcf3c3a286d53dd1db.jpg',
+  },
+  {
+    id: 6,
+    title: 'Hutan Pinus Lahendong',
+    subtitle: 'Lorem ipsum dolor sit amet',
+    illustration:
+      'https://www.celebes.co/wp-content/uploads/2021/11/Hutan-Pinus-Tomohon.jpg',
+  },
+  {
+    id: 7,
+    title: 'Pantai Pall',
+    subtitle: 'Lorem ipsum dolor sit amet',
+    illustration:
+      'https://blog.tiket.com/wp-content/uploads/Keindahan-Pantai-Paal-di-Likupang_Blog-new-update-mei2020-Bersantai-di-Pantai-Paal-1.jpg',
+  },
+  {
+    id: 8,
+    title: 'Pulau Lembeh',
+    subtitle: 'Lorem ipsum dolor sit amet',
+    illustration:
+      'https://i0.wp.com/www.pesisir.net/wp-content/uploads/2021/09/Daya-Tarik-Pulau-Lembeh.jpg?resize=708%2C354&ssl=1',
+  },
+  {
+    id: 9,
+    title: 'Pulau Lihaga',
+    subtitle: 'Lorem ipsum dolor sit amet',
+    illustration:
+      'https://waktu.news/wp-content/uploads/2020/12/pulau-lihaga.jpg',
+  },
+  {
+    id: 10,
+    title: 'Taman Nasional Tangkoko',
+    subtitle: 'Lorem ipsum dolor sit amet',
+    illustration:
+      'https://www.mongabay.co.id/wp-content/uploads/2013/07/yaki111-20130701_134719.jpg',
   },
 ];
 
@@ -52,8 +96,11 @@ const MyCarousel = props => {
     setEntries(ENTRIES1);
   }, []);
 
-  const navigateToPage = () => {
-    navigation.navigate('PagesBentengMoraya');
+  // const navigateToPage = item => {
+  //   navigation.navigate('PagesBentengMoraya');
+  // };
+  const navigateToPage = item => {
+    navigation.navigate('PagesBukitKasih');
   };
 
   const renderItem = ({item, index}, parallaxProps) => {
@@ -67,7 +114,7 @@ const MyCarousel = props => {
             parallaxFactor={0.1}
             {...parallaxProps}
           />
-          <Gap height={15} />
+          <Gap height={30} />
           <Text style={styles.title} numberOfLines={2}>
             {item.title}
           </Text>
@@ -101,8 +148,8 @@ const MyCarousel = props => {
     <View style={styles.container}>
       <Carousel
         ref={carouselRef}
-        sliderWidth={screenWidth}
-        sliderHeight={screenWidth}
+        sliderWidth={screenWidth - 50}
+        sliderHeight={screenWidth - 10}
         itemWidth={screenWidth - 5}
         data={entries}
         renderItem={renderItem}
@@ -122,7 +169,7 @@ const styles = StyleSheet.create({
   },
   item: {
     width: screenWidth - 52,
-    height: screenWidth - 60,
+    height: screenWidth - 0,
   },
   imageContainer: {
     flex: 1,
@@ -158,6 +205,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textShadowColor: '#808080',
     textShadowOffset: {width: 0.1, height: 0.1},
-    textShadowRadius: 0.5,
+    textShadowRadius: 1,
+    top: -2,
   },
 });

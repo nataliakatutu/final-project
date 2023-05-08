@@ -8,7 +8,7 @@ import {
 import React from 'react';
 import {Button, Header} from '../../components';
 import Gap from '../../components/atoms/Gap';
-import {DraftIcon, HomeIcon, Search, ProfilePhoto} from '../../assets';
+import {DraftIcon, HomeIcon, ProfilePhoto, Logokecil} from '../../assets';
 import Gambargambar from './Gambargambar';
 
 const Home = ({navigation}) => {
@@ -17,21 +17,22 @@ const Home = ({navigation}) => {
       {/* <Header title="Money Tracker" subtitle="Track your money" />
       <Gap height={20} /> */}
       <View style={styles.header}>
-        <Text style={styles.title}>bapontar</Text>
-        <Text style={styles.subtitle}>Gasss Kuy!!!</Text>
-        <Search left={100} />
+        <Text style={styles.title}>bap</Text>
+        <Logokecil top={-8} />
+        <Text style={styles.title}>ntar</Text>
+        <Text style={styles.subtitle}>Gasss kuy!!!</Text>
       </View>
-      <Gap height={20} />
+      <Gap height={10} />
       <View style={styles.container}>
         <Text style={styles.titleText}>Silahkan pilih destinasi:</Text>
         <Gap height={30} />
         <Gambargambar />
       </View>
-      <Gap height={25} />
+      <Gap height={10} />
       <View style={styles.navBar}>
         <TouchableOpacity activeOpacity={0.7}>
           <View>
-            <HomeIcon />
+            <HomeIcon style={{marginTop: -12}} />
           </View>
         </TouchableOpacity>
         <TouchableOpacity activeOpacity={0.7}>
@@ -55,19 +56,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 24,
-    paddingVertical: 35,
+    paddingVertical: 25,
   },
   title: {
     top: -8,
-    fontSize: 30,
-    color: 'black',
-    fontFamily: 'Poppins-Medium',
+    fontSize: 50,
+    color: '#000',
+    fontFamily: 'Poppins-Bold',
   },
   subtitle: {
     fontSize: 15,
-    fontFamily: 'Poppins-Light',
-    top: 30,
+    fontFamily: 'Poppins-Medium',
+    top: 38,
     right: 141,
+    marginLeft: -118,
   },
   container: {
     flex: 2,
@@ -83,7 +85,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   navBar: {
-    flex: 0.5,
+    flex: 0.26,
     backgroundColor: '#FFFFFF',
     flexDirection: 'row',
     justifyContent: 'space-around',

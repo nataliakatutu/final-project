@@ -9,6 +9,11 @@ import {
   SplashScreen,
   PagesBukitDoa,
   PagesBentengMoraya,
+  PagesBukitKasih,
+  PagesTamanNasional,
+  PagesPantaiPall,
+  PagesLahendong,
+  PagesBunaken,
   Home,
 } from '../pages';
 
@@ -60,6 +65,31 @@ const Routers = () => {
       <Stack.Screen
         name="PagesBentengMoraya"
         component={PagesBentengMoraya}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PagesBukitKasih"
+        component={PagesBukitKasih}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PagesBunaken"
+        component={PagesBunaken}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PagesTamanNasional"
+        component={PagesTamanNasional}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PagesLahendong"
+        component={PagesLahendong}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PagesPantaiPall"
+        component={PagesPantaiPall}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
