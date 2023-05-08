@@ -16,11 +16,18 @@ import DokuDN2 from './Docu-danaulinow2.svg';
 import DokuDN3 from './Docu-danaulinow3.svg';
 import BentengMoraya from './BM1.svg';
 import BukitDoa from './BD6.svg';
-
+import Youtube from './youtube.svg';
+import Map from './Map.svg';
+import Waktu from './Waktu.svg';
+import Uang from './Uang.svg';
 export {
+  Map,
+  Waktu,
+  Uang,
   BukitDoa,
   BentengMoraya,
   DokuDN3,
+  Youtube,
   DokuDN2,
   DokuDN1,
   ProfilePhoto,

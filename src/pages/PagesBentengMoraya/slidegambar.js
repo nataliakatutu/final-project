@@ -82,8 +82,9 @@ const styles = StyleSheet.create({
   slide: {
     borderRadius: 10,
     overflow: 'hidden',
-    width: 250,
-    height: 150,
+    width: 280,
+    height: 250,
+    marginLeft: -25,
   },
   image: {
     flex: 1,

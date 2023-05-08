@@ -1,5 +1,6 @@
 import React, {useRef, useState, useEffect} from 'react';
 import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
+import {useNavigation} from '@react-navigation/native';
 import Gap from '../../components/atoms/Gap';
 import {
   View,
@@ -45,26 +46,33 @@ const MyCarousel = props => {
   const [entries, setEntries] = useState([]);
   const carouselRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const navigation = useNavigation();
 
   useEffect(() => {
     setEntries(ENTRIES1);
   }, []);
 
+  const navigateToPage = () => {
+    navigation.navigate('PagesBentengMoraya');
+  };
+
   const renderItem = ({item, index}, parallaxProps) => {
     return (
-      <View style={styles.item}>
-        <ParallaxImage
-          source={{uri: item.illustration}}
-          containerStyle={styles.imageContainer}
-          style={styles.image}
-          parallaxFactor={0.1}
-          {...parallaxProps}
-        />
-        <Gap height={15} />
-        <Text style={styles.title} numberOfLines={2}>
-          {item.title}
-        </Text>
-      </View>
+      <TouchableOpacity onPress={navigateToPage}>
+        <View style={styles.item}>
+          <ParallaxImage
+            source={{uri: item.illustration}}
+            containerStyle={styles.imageContainer}
+            style={styles.image}
+            parallaxFactor={0.1}
+            {...parallaxProps}
+          />
+          <Gap height={15} />
+          <Text style={styles.title} numberOfLines={2}>
+            {item.title}
+          </Text>
+        </View>
+      </TouchableOpacity>
     );
   };
 
