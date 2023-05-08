@@ -10,7 +10,9 @@ import Pall from './Pall.svg';
 import Bunaken from './Bunaken.svg';
 import IconLove from './iconlove.svg';
 import HomeIcon from './Home.svg';
+import HomeIconOff from './HomeOff.svg';
 import DraftIcon from './Frame.svg';
+import DraftIconOn from './FrameOn.svg';
 import ProfilePhoto from './Profile.svg';
 import DokuDN1 from './Docu-danaulinow1.svg';
 import DokuDN2 from './Docu-danaulinow2.svg';
@@ -24,9 +26,12 @@ import Uang from './Uang.svg';
 import BukitKasih from './BukitK.svg';
 import Lahendong from './Lahendong.svg';
 import TamanNasional from './TamanNasional.svg';
+import IconLoveRed from './icon-love-red.svg';
 
 export {
+  IconLoveRed,
   Map,
+  HomeIconOff,
   TamanNasional,
   Lahendong,
   BukitKasih,
@@ -52,4 +57,5 @@ export {
   Logo,
   Pall,
   Bunaken,
+  DraftIconOn,
 };

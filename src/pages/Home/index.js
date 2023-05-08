@@ -35,7 +35,9 @@ const Home = ({navigation}) => {
             <HomeIcon style={{marginTop: -12}} />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Profile')}
+          activeOpacity={0.7}>
           <View>
             <DraftIcon />
           </View>

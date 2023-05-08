@@ -12,8 +12,10 @@ import PagesBukitDoa from './PagesBukitDoa';
 import PagesTamanNasional from './PageTamanNasional';
 import PagesPulauLihaga from './PagesPulauLihaga';
 import PagesBukitKasih from './PagesBukitKasih';
+import Profile from './Profile';
 
 export {
+  Profile,
   PagesBukitKasih,
   PagesPulauLihaga,
   PagesTamanNasional,

@@ -15,6 +15,7 @@ import {
   PagesLahendong,
   PagesBunaken,
   Home,
+  Profile,
 } from '../pages';
 
 const Stack = createNativeStackNavigator();
@@ -40,6 +41,11 @@ const Routers = () => {
       <Stack.Screen
         name="Home"
         component={Home}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Profile"
+        component={Profile}
         options={{headerShown: false}}
       />
       <Stack.Screen
