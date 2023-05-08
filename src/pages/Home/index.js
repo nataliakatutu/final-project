@@ -23,8 +23,8 @@ const Home = ({navigation}) => {
       </View>
       <Gap height={20} />
       <View style={styles.container}>
-        <Text style={styles.titleText}>Silahkan pilih destinasi</Text>
-        <Gap height={50} />
+        <Text style={styles.titleText}>Silahkan pilih destinasi:</Text>
+        <Gap height={30} />
         <Gambargambar />
       </View>
       <Gap height={25} />
