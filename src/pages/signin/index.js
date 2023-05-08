@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   contentWrapper: {
     flex: 1,
     backgroundColor: 'white',
-    paddingHorizontal: 24,
+    paddingHorizontal: 23,
     marginTop: 24,
     paddingTop: 24,
   },

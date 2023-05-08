@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {View, SafeAreaView, ImageBackground} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
@@ -9,19 +9,16 @@ export default class App extends React.Component {
       activeIndex: 0,
       carouselItems: [
         {
-          image: require('../../assets/icons/Lahendong1.jpg'),
+          image: require('../../assets/icons/TN1.jpg'),
         },
         {
-          image: require('../../assets/icons/Lahendong2.jpg'),
+          image: require('../../assets/icons/TN2.jpg'),
         },
         {
-          image: require('../../assets/icons/Lahendong3.jpg'),
+          image: require('../../assets/icons/TN3.jpg'),
         },
         {
-          image: require('../../assets/icons/Lahendong4.jpg'),
-        },
-        {
-          image: require('../../assets/icons/Lahendong5.jpg'),
+          image: require('../../assets/icons/TN4.jpg'),
         },
       ],
     };

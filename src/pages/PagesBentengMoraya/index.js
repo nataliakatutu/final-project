@@ -7,31 +7,45 @@ import {
   ScrollView,
   SafeAreaView,
   TextInput,
+  Linking,
 } from 'react-native';
 import React, {Component} from 'react';
-import {Home, Search, IconBack, IconLove, BentengMoraya} from '../../assets';
+import {
+  Home,
+  Search,
+  IconBack,
+  IconLove,
+  BentengMoraya,
+  Youtube,
+  Waktu,
+  Uang,
+  Map,
+} from '../../assets';
 import {Image} from 'react-native-svg';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Carousel from 'react-native-snap-carousel';
 import SlideGambar from './slidegambar';
 import Komentar from './komentar';
+import {useNavigation} from '@react-navigation/native';
+
+const openYouTube = () => {
+  Linking.openURL('https://youtu.be/D7agdRoCigo');
+};
+
+const openMaps = () => {
+  Linking.openURL('https://goo.gl/maps/6X4STY1zPcWBW1bR7');
+};
 
 const SplashScreen = ({navigation}) => {
+  const {navigate} = useNavigation();
+
+  const navigateToHome = () => {
+    navigate('Home');
+  };
   return (
     <ScrollView>
       <View style={styles.container}>
         <StatusBar backgroundColor={'#0000'} barStyle={'dark-content'} />
-        {/* <View style={styles.navBar}>
-        <TouchableOpacity
-          onPress={() => this.props.navigation.goBack()}
-          activeOpacity={0.7}>
-          <View>
-            <Home />
-          </View>
-        </TouchableOpacity>
-        <Text style={styles.namaapp}>BAPONTAR</Text>
-        <Search />
-      </View> */}
         <View>
           <BentengMoraya />
           <View
@@ -44,7 +58,7 @@ const SplashScreen = ({navigation}) => {
             <Text style={styles.textPict}>Benteng Moraya</Text>
             <TouchableOpacity
               style={{position: 'absolute', top: 20, left: 20}}
-              onPress={() => this.props.navigation.goBack()}>
+              onPress={navigateToHome}>
               <IconBack name="icon-back" size={30} color="#fff" />
             </TouchableOpacity>
             <TouchableOpacity
@@ -63,6 +77,30 @@ const SplashScreen = ({navigation}) => {
             pada kejayaan Tou Minahasa di masa lalu.
           </Text>
           <View style={styles.ratingContainer}>
+            <Waktu style={styles.ikon} />
+            <Text style={styles.ikoText}>Waktu Kunjungan:</Text>
+            <Text style={styles.ikoTextWaktu}>Setiap hari</Text>
+          </View>
+          <View style={styles.ratingContainer}>
+            <Uang style={styles.ikon} />
+            <Text style={styles.ikoText}>Harga Tiket Masuk: Free</Text>
+          </View>
+          <View style={styles.ratingContainer}>
+            <Map style={styles.ikon} />
+            <TouchableOpacity onPress={openMaps}>
+              <Text style={styles.ikoText}>
+                Kec. Tondano Bar., Sulawesi Utara
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.ratingContainer}>
+            <Youtube style={styles.ikon} />
+            <TouchableOpacity onPress={openYouTube}>
+              <Text style={styles.ikoTextYoutube}>YouTube Video</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.ratingContainer}>
             <FontAwesome name="star" style={styles.ratingStar} />
             <FontAwesome name="star" style={styles.ratingStar} />
             <FontAwesome name="star" style={styles.ratingStar} />
@@ -78,7 +116,7 @@ const SplashScreen = ({navigation}) => {
               borderColor: '#999',
               borderRadius: 9,
               padding: 10,
-              marginBottom: 10,
+              marginBottom: 25,
               top: 25,
             }}>
             <Text
@@ -153,19 +191,52 @@ const styles = StyleSheet.create({
     marginTop: -25,
   },
   cardTitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontFamily: 'Poppins-Bold',
-    marginBottom: 10,
+    marginBottom: 0,
   },
   cardContent: {
-    fontSize: 16,
+    fontSize: 15,
     fontFamily: 'Poppins-Medium',
+    marginBottom: 15,
   },
   dokuTitle: {
-    backgroundColor: '#fff',
     paddingVertical: 25,
     paddingRight: 100,
-    fontSize: 16,
-    fontFamily: 'Poppins-SemiBold',
+    fontSize: 22,
+    fontFamily: 'Poppins-Bold',
+    marginBottom: 0,
+  },
+  ikon: {
+    marginTop: -15,
+  },
+  ikoTextYoutube: {
+    fontSize: 13,
+    fontFamily: 'Poppins-Medium',
+    marginBottom: 14,
+    color: '#C9CC29',
+    marginLeft: 8,
+    textDecorationLine: 'underline',
+  },
+  ikoTextWaktu: {
+    fontSize: 13,
+    fontFamily: 'Poppins-Medium',
+    marginBottom: 14,
+    color: '#349BD6',
+    marginLeft: 4,
+  },
+  ikoText: {
+    fontSize: 13,
+    fontFamily: 'Poppins-Medium',
+    marginBottom: 14,
+    marginLeft: 8,
+  },
+  contentWrapper: {
+    borderWidth: 1,
+    borderColor: '#999',
+    borderRadius: 9,
+    padding: 1,
+    marginBottom: 30,
+    top: 25,
   },
 });

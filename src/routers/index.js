@@ -1,12 +1,15 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {
+  PagesPulauLihaga,
+  PagesPulauLembeh,
   PagesDanauLinow,
   SignIn,
   SignUp,
   SplashScreen,
   PagesBukitDoa,
   PagesBentengMoraya,
+  Home,
 } from '../pages';
 
 const Stack = createNativeStackNavigator();
@@ -30,8 +33,23 @@ const Routers = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="PagesDanauLinow"
         component={PagesDanauLinow}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PagesPulauLihaga"
+        component={PagesPulauLihaga}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="PagesPulauLembeh"
+        component={PagesPulauLembeh}
         options={{headerShown: false}}
       />
       <Stack.Screen

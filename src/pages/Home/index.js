@@ -8,8 +8,7 @@ import {
 import React from 'react';
 import {Button, Header} from '../../components';
 import Gap from '../../components/atoms/Gap';
-import {DraftIcon, HomeIcon, ProfilePhoto} from '../../assets';
-import {Search} from '../../assets';
+import {DraftIcon, HomeIcon, Search, ProfilePhoto} from '../../assets';
 import Gambargambar from './Gambargambar';
 
 const Home = ({navigation}) => {
@@ -18,17 +17,16 @@ const Home = ({navigation}) => {
       {/* <Header title="Money Tracker" subtitle="Track your money" />
       <Gap height={20} /> */}
       <View style={styles.header}>
-        <Text style={styles.title}>BAPONTAR</Text>
+        <Text style={styles.title}>bapontar</Text>
         <Text style={styles.subtitle}>Gasss Kuy!!!</Text>
         <Search left={100} />
       </View>
       <Gap height={20} />
       <View style={styles.container}>
-        <Text style={styles.titleText}>Silahkan pilih destinasi</Text>
-        <Gap height={25} />
-        <Gap height={14} />
+        <Text style={styles.titleText}>Silahkan pilih destinasi:</Text>
+        <Gap height={30} />
+        <Gambargambar />
       </View>
-      <Gambargambar />
       <Gap height={25} />
       <View style={styles.navBar}>
         <TouchableOpacity activeOpacity={0.7}>
@@ -60,7 +58,8 @@ const styles = StyleSheet.create({
     paddingVertical: 35,
   },
   title: {
-    fontSize: 24,
+    top: -8,
+    fontSize: 30,
     color: 'black',
     fontFamily: 'Poppins-Medium',
   },
@@ -68,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Poppins-Light',
     top: 30,
-    right: 140,
+    right: 141,
   },
   container: {
     flex: 2,
