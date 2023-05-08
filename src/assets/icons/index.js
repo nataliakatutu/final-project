@@ -5,10 +5,11 @@ import DanauLinow from './DanauLinow.svg';
 import PulauLembeh from './PulauLembeh.svg';
 import PulauLihaga from './PulauLihaga.svg';
 import Logo from './Logo.svg';
+import Logokecil from './Logokecil.svg';
 import Pall from './Pall.svg';
 import Bunaken from './Bunaken.svg';
 import IconLove from './iconlove.svg';
-import HomeIcon from './Subtract.svg';
+import HomeIcon from './Home.svg';
 import DraftIcon from './Frame.svg';
 import ProfilePhoto from './Profile.svg';
 import DokuDN1 from './Docu-danaulinow1.svg';
@@ -35,6 +36,7 @@ export {
   HomeIcon,
   IconLove,
   Search,
+  Logokecil,
   Home,
   IconBack,
   DanauLinow,
