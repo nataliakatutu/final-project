@@ -43,9 +43,6 @@ const SplashScreen = ({navigation}) => {
     navigate('Home');
   };
 
-  // const PagesBentengMoraya = ({route}) => {
-  //   const {item} = route.params;
-
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -142,7 +139,6 @@ const SplashScreen = ({navigation}) => {
     </ScrollView>
   );
 };
-// };
 
 export default SplashScreen;
 

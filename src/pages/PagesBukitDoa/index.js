@@ -15,7 +15,7 @@ import {
   Search,
   IconBack,
   IconLove,
-  BukitDoa,
+  BentengMoraya,
   Youtube,
   Waktu,
   Uang,
@@ -29,11 +29,11 @@ import Komentar from './komentar';
 import {useNavigation} from '@react-navigation/native';
 
 const openYouTube = () => {
-  Linking.openURL('https://youtu.be/2r3W4By7tB8');
+  Linking.openURL('https://youtu.be/D7agdRoCigo');
 };
 
 const openMaps = () => {
-  Linking.openURL('https://goo.gl/maps/8hM9DyJoQL1otMgs5');
+  Linking.openURL('https://goo.gl/maps/6X4STY1zPcWBW1bR7');
 };
 
 const SplashScreen = ({navigation}) => {
@@ -43,15 +43,12 @@ const SplashScreen = ({navigation}) => {
     navigate('Home');
   };
 
-  // const PagesBentengMoraya = ({route}) => {
-  //   const {item} = route.params;
-
   return (
     <ScrollView>
       <View style={styles.container}>
         <StatusBar backgroundColor={'#0000'} barStyle={'dark-content'} />
         <View>
-          <BukitDoa />
+          <BentengMoraya />
           <View
             style={{
               position: 'absolute',
@@ -75,25 +72,25 @@ const SplashScreen = ({navigation}) => {
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Deskripsi</Text>
           <Text style={styles.cardContent}>
-            Bukit Doa Tomohon merupakan salah satu objek wisata alam yang juga
-            menjadi tempat wisata religi. Bukit Doa Mahawu dibuka pertama kali
-            pada tahun 2006, tepatnya tanggal 14 September bertepatan dengan
-            hari raya Salib Suci.
+            Benteng Moraya merupakan salah satu destinasi wisata yang ada di
+            Tondano. Bangunan benteng ini layaknya menara pengintai yang
+            memiliki empat lantai. Lantainya yang menjulang kokoh membawa ikatan
+            pada kejayaan Tou Minahasa di masa lalu.
           </Text>
           <View style={styles.ratingContainer}>
             <Waktu style={styles.ikon} />
             <Text style={styles.ikoText}>Waktu Kunjungan:</Text>
-            <Text style={styles.ikoTextWaktu}>Jam 09:00-17:00 WITA</Text>
+            <Text style={styles.ikoTextWaktu}>Setiap hari</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Uang style={styles.ikon} />
-            <Text style={styles.ikoText}>Harga Tiket Masuk: Rp. 20.000</Text>
+            <Text style={styles.ikoText}>Harga Tiket Masuk: Free</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Map style={styles.ikon} />
             <TouchableOpacity onPress={openMaps}>
               <Text style={styles.ikoText}>
-                Kec. Tomohon Utara, Tomohon, Sulawesi Utara
+                Kec. Tondano Bar., Sulawesi Utara
               </Text>
             </TouchableOpacity>
           </View>
@@ -108,9 +105,9 @@ const SplashScreen = ({navigation}) => {
             <FontAwesome name="star" style={styles.ratingStar} />
             <FontAwesome name="star" style={styles.ratingStar} />
             <FontAwesome name="star" style={styles.ratingStar} />
+            <FontAwesome name="star" style={styles.ratingStar} />
             <FontAwesome name="star-half-empty" style={styles.ratingStar} />
-            <FontAwesome name="star-o" style={styles.ratingStar} />
-            <Text style={styles.ratingText}>3.5 / 5</Text>
+            <Text style={styles.ratingText}>4.5</Text>
           </View>
           <Text style={styles.dokuTitle}>Dokumentasi</Text>
           <SlideGambar />
@@ -142,7 +139,6 @@ const SplashScreen = ({navigation}) => {
     </ScrollView>
   );
 };
-// };
 
 export default SplashScreen;
 
@@ -169,7 +165,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
     color: 'white',
     textAlign: 'center',
-    padding: 90,
+    padding: 70,
     textShadowColor: '#000',
     textShadowOffset: {width: 1, height: 1},
     textShadowRadius: 10,
