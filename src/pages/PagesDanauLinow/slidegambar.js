@@ -33,7 +33,7 @@ export default class App extends React.Component {
         style={{
           borderRadius: 25,
           height: 230,
-          marginLeft: 25,
+          marginLeft: 2,
         }}>
         <ImageBackground
           source={item.image}
@@ -56,7 +56,7 @@ export default class App extends React.Component {
             layout={'default'}
             ref={ref => (this.carousel = ref)}
             data={this.state.carouselItems}
-            sliderWidth={100}
+            sliderWidth={200}
             itemWidth={300}
             renderItem={this._renderItem}
             onSnapToItem={index => this.setState({activeIndex: index})}

@@ -9,19 +9,16 @@ export default class App extends React.Component {
       activeIndex: 0,
       carouselItems: [
         {
-          image: require('../../assets/icons/PLihaga4.jpg'),
-        },
-        {
-          image: require('../../assets/icons/PLihaga5.jpg'),
-        },
-        {
           image: require('../../assets/icons/PLihaga1.jpg'),
+        },
+        {
+          image: require('../../assets/icons/PLihaga2.jpg'),
         },
         {
           image: require('../../assets/icons/PLihaga3.jpeg'),
         },
         {
-          image: require('../../assets/icons/PLihaga2.jpg'),
+          image: require('../../assets/icons/PLihaga4.jpg'),
         },
       ],
     };
@@ -33,7 +30,7 @@ export default class App extends React.Component {
         style={{
           borderRadius: 25,
           height: 230,
-          marginLeft: 25,
+          marginLeft: 2,
         }}>
         <ImageBackground
           source={item.image}
@@ -56,7 +53,7 @@ export default class App extends React.Component {
             layout={'default'}
             ref={ref => (this.carousel = ref)}
             data={this.state.carouselItems}
-            sliderWidth={100}
+            sliderWidth={200}
             itemWidth={300}
             renderItem={this._renderItem}
             onSnapToItem={index => this.setState({activeIndex: index})}

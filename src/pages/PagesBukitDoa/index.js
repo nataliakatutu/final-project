@@ -43,9 +43,6 @@ const SplashScreen = ({navigation}) => {
     navigate('Home');
   };
 
-  // const PagesBentengMoraya = ({route}) => {
-  //   const {item} = route.params;
-
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -82,19 +79,17 @@ const SplashScreen = ({navigation}) => {
           </Text>
           <View style={styles.ratingContainer}>
             <Waktu style={styles.ikon} />
-            <Text style={styles.ikoText}>Waktu Kunjungan:</Text>
+            <Text style={styles.ikoText}> Waktu Kunjungan:</Text>
             <Text style={styles.ikoTextWaktu}>Jam 09:00-17:00 WITA</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Uang style={styles.ikon} />
-            <Text style={styles.ikoText}>Harga Tiket Masuk: Rp. 20.000</Text>
+            <Text style={styles.ikoText}> Harga Tiket Masuk: Rp. 20.000</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Map style={styles.ikon} />
             <TouchableOpacity onPress={openMaps}>
-              <Text style={styles.ikoText}>
-                Kec. Tomohon Utara, Tomohon, Sulawesi Utara
-              </Text>
+              <Text style={styles.ikoText}>Kota Tomohon, Sulawesi Utara</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
@@ -108,9 +103,9 @@ const SplashScreen = ({navigation}) => {
             <FontAwesome name="star" style={styles.ratingStar} />
             <FontAwesome name="star" style={styles.ratingStar} />
             <FontAwesome name="star" style={styles.ratingStar} />
+            <FontAwesome name="star" style={styles.ratingStar} />
             <FontAwesome name="star-half-empty" style={styles.ratingStar} />
-            <FontAwesome name="star-o" style={styles.ratingStar} />
-            <Text style={styles.ratingText}>3.5 / 5</Text>
+            <Text style={styles.ratingText}>4.5</Text>
           </View>
           <Text style={styles.dokuTitle}>Dokumentasi</Text>
           <SlideGambar />
@@ -142,7 +137,6 @@ const SplashScreen = ({navigation}) => {
     </ScrollView>
   );
 };
-// };
 
 export default SplashScreen;
 
@@ -220,7 +214,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     marginBottom: 14,
     color: '#C9CC29',
-    marginLeft: 8,
+    marginLeft: 12,
     textDecorationLine: 'underline',
   },
   ikoTextWaktu: {

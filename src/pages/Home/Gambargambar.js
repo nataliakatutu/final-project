@@ -99,13 +99,46 @@ const MyCarousel = props => {
   // const navigateToPage = item => {
   //   navigation.navigate('PagesBentengMoraya');
   // };
-  const navigateToPage = item => {
-    navigation.navigate('PagesBukitKasih');
+  const navigateToPage = id => {
+    switch (id) {
+      case 1:
+        navigation.navigate('PagesBentengMoraya');
+        break;
+      case 2:
+        navigation.navigate('PagesBukitDoa');
+        break;
+      case 3:
+        navigation.navigate('PagesBukitKasih');
+        break;
+      case 4:
+        navigation.navigate('PagesBunaken');
+        break;
+      case 5:
+        navigation.navigate('PagesDanauLinow');
+        break;
+      case 6:
+        navigation.navigate('PagesLahendong');
+        break;
+      case 7:
+        navigation.navigate('PagesPantaiPall');
+        break;
+      case 8:
+        navigation.navigate('PagesPulauLembeh');
+        break;
+      case 9:
+        navigation.navigate('PagesPulauLihaga');
+        break;
+      case 10:
+        navigation.navigate('PagesTamanNasional');
+        break;
+      default:
+        break;
+    }
   };
 
   const renderItem = ({item, index}, parallaxProps) => {
     return (
-      <TouchableOpacity onPress={navigateToPage}>
+      <TouchableOpacity onPress={() => navigateToPage(item.id)}>
         <View style={styles.item}>
           <ParallaxImage
             source={{uri: item.illustration}}

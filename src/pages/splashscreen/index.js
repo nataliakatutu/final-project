@@ -11,7 +11,7 @@ const SplashScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Logo />
-      <Text style={styles.text}>bapontar</Text>
+      <Text style={styles.text}>b a p o n t a r</Text>
     </View>
   );
 };
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 35,
-    fontFamily: 'Poppins-Medium',
+    fontFamily: 'Poppins-Bold',
     color: 'black',
     paddingTop: 10,
   },

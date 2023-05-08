@@ -5,65 +5,141 @@ import {
   StatusBar,
   TouchableOpacity,
   ScrollView,
+  SafeAreaView,
+  TextInput,
+  Linking,
 } from 'react-native';
-import React from 'react';
-import {Home, Search, Lahendong} from '../../assets';
-import SlideGambar from './slidegambar.js';
+import React, {Component} from 'react';
+import {
+  Home,
+  Search,
+  Lahendong,
+  IconBack,
+  IconLove,
+  Youtube,
+  Waktu,
+  Uang,
+  Map,
+} from '../../assets';
+import {Image} from 'react-native-svg';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Carousel from 'react-native-snap-carousel';
+import SlideGambar from './slidegambar';
+import Komentar from './komentar';
+import {useNavigation} from '@react-navigation/native';
 
-const PagesLahendong = ({navigation}) => {
+const openYouTube = () => {
+  Linking.openURL('https://youtu.be/XW5Op06q2yA');
+};
+
+const openMaps = () => {
+  Linking.openURL('https://goo.gl/maps/6VZ1fJiUXU5FzBpd6');
+};
+
+const SplashScreen = ({navigation}) => {
+  const {navigate} = useNavigation();
+
+  const navigateToHome = () => {
+    navigate('Home');
+  };
+
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor={'#0000'} barStyle={'dark-content'} />
-
-      <View style={styles.navBar}>
-        <TouchableOpacity
-          onPress={() => this.props.navigation.goBack()}
-          activeOpacity={0.7}>
-          <View>
-            <Home />
+    <ScrollView>
+      <View style={styles.container}>
+        <StatusBar backgroundColor={'#0000'} barStyle={'dark-content'} />
+        <View>
+          <Lahendong />
+          <View
+            style={{
+              position: 'absolute',
+              // bottom: 0,
+              left: 0,
+              right: 0,
+            }}>
+            <Text style={styles.textPict}>Lahendong</Text>
+            <TouchableOpacity
+              style={{position: 'absolute', top: 20, left: 20}}
+              onPress={navigateToHome}>
+              <IconBack name="icon-back" size={30} color="#fff" />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{position: 'absolute', top: 20, right: 20}}
+              onPress={() => this.props.navigation.goBack()}>
+              <IconLove name="icon-love" size={30} color="#fff" />
+            </TouchableOpacity>
           </View>
-        </TouchableOpacity>
-        <Text style={styles.namaapp}>BAPONTAR</Text>
-        <Search />
-      </View>
-      <View>
-        <Lahendong />
-        <View
-          style={{
-            position: 'absolute',
-            // bottom: 0,
-            left: 0,
-            right: 0,
-          }}>
-          <Text style={styles.textPict}>Pulau Lembeh</Text>
         </View>
-      </View>
-      <View style={styles.card}>
-        <View style={styles.cardTitleContainer}>
+        <View style={styles.card}>
           <Text style={styles.cardTitle}>Deskripsi</Text>
-        </View>
-        <Text style={styles.cardContent}>
-          Hutan pinus Lahendong merupakan salah satu wisata alam menakjubkan di
-          Tomohon, Sulawesi Utara. Kawasan hijau ini terlihat indah dengan
-          pemandangan hutan pinus dan juga pemandian air panas.
-        </Text>
-        <View style={styles.ratingContainer}>
-          <FontAwesome name="star" style={styles.ratingStar} />
-          <FontAwesome name="star" style={styles.ratingStar} />
-          <FontAwesome name="star" style={styles.ratingStar} />
-          <FontAwesome name="star" style={styles.ratingStar} />
-          <FontAwesome name="star-half-empty" style={styles.ratingStar} />
-          <Text style={styles.ratingText}>4.5</Text>
+          <Text style={styles.cardContent}>
+            Hutan pinus Lahendong merupakan salah satu wisata alam menakjubkan
+            di Tomohon, Sulawesi Utara. Kawasan hijau ini terlihat indah dengan
+            pemandangan hutan pinus dan juga pemandian air panas.
+          </Text>
+          <View style={styles.ratingContainer}>
+            <Waktu style={styles.ikon} />
+            <Text style={styles.ikoText}> Waktu Kunjungan:</Text>
+            <Text style={styles.ikoTextWaktu}>Jam 08:00-22:00 WITA</Text>
+          </View>
+          <View style={styles.ratingContainer}>
+            <Uang style={styles.ikon} />
+            <Text style={styles.ikoText}> Harga Masuk: Rp. 35000</Text>
+          </View>
+          <View style={styles.ratingContainer}>
+            <Map style={styles.ikon} />
+            <TouchableOpacity onPress={openMaps}>
+              <Text style={styles.ikoText}>
+                Jalan Lahendong, Lahendong, Tomohon Selatan
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.ratingContainer}>
+            <Youtube style={styles.ikon} />
+            <TouchableOpacity onPress={openYouTube}>
+              <Text style={styles.ikoTextYoutube}>YouTube Video</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.ratingContainer}>
+            <FontAwesome name="star" style={styles.ratingStar} />
+            <FontAwesome name="star" style={styles.ratingStar} />
+            <FontAwesome name="star" style={styles.ratingStar} />
+            <FontAwesome name="star" style={styles.ratingStar} />
+            <FontAwesome name="star-half-empty" style={styles.ratingStar} />
+            <Text style={styles.ratingText}>4.5</Text>
+          </View>
+          <Text style={styles.dokuTitle}>Dokumentasi</Text>
+          <SlideGambar />
+          <View
+            style={{
+              borderWidth: 1,
+              borderColor: '#999',
+              borderRadius: 9,
+              padding: 10,
+              marginBottom: 25,
+              top: 25,
+            }}>
+            <Text
+              style={{
+                fontWeight: 'bold',
+                fontSize: 18,
+                marginBottom: 10,
+                flex: 1,
+              }}>
+              Komentar
+            </Text>
+            <Komentar />
+          </View>
+          <View style={styles.contentWrapper}>
+            <TextInput title="Komentar" placeholder="Type your comment here" />
+          </View>
         </View>
       </View>
-
-      <SlideGambar />
-    </View>
+    </ScrollView>
   );
 };
 
-export default PagesLahendong;
+export default SplashScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -88,23 +164,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
     color: 'white',
     textAlign: 'center',
-    padding: 90,
+    padding: 80,
     textShadowColor: '#000',
     textShadowOffset: {width: 1, height: 1},
     textShadowRadius: 10,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 20,
-    padding: 25,
-    marginTop: -25,
-    marginBottom: -15,
-  },
-  cardTitle: {
-    fontSize: 22,
-    fontFamily: 'Poppins-Bold',
-    marginBottom: 5,
   },
   ratingContainer: {
     flexDirection: 'row',
@@ -120,8 +184,59 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     color: '#FFA500',
   },
+  card: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: 25,
+    marginTop: -25,
+  },
+  cardTitle: {
+    fontSize: 22,
+    fontFamily: 'Poppins-Bold',
+    marginBottom: 0,
+  },
   cardContent: {
     fontSize: 15,
     fontFamily: 'Poppins-Medium',
+    marginBottom: 15,
+  },
+  dokuTitle: {
+    paddingVertical: 25,
+    paddingRight: 100,
+    fontSize: 22,
+    fontFamily: 'Poppins-Bold',
+    marginBottom: 0,
+  },
+  ikon: {
+    marginTop: -15,
+  },
+  ikoTextYoutube: {
+    fontSize: 13,
+    fontFamily: 'Poppins-Medium',
+    marginBottom: 14,
+    color: '#C9CC29',
+    marginLeft: 12,
+    textDecorationLine: 'underline',
+  },
+  ikoTextWaktu: {
+    fontSize: 13,
+    fontFamily: 'Poppins-Medium',
+    marginBottom: 14,
+    color: '#349BD6',
+    marginLeft: 4,
+  },
+  ikoText: {
+    fontSize: 13,
+    fontFamily: 'Poppins-Medium',
+    marginBottom: 14,
+    marginLeft: 8,
+  },
+  contentWrapper: {
+    borderWidth: 1,
+    borderColor: '#999',
+    borderRadius: 9,
+    padding: 1,
+    marginBottom: 30,
+    top: 25,
   },
 });

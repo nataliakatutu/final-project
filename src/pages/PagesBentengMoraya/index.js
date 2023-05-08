@@ -43,9 +43,6 @@ const SplashScreen = ({navigation}) => {
     navigate('Home');
   };
 
-  // const PagesBentengMoraya = ({route}) => {
-  //   const {item} = route.params;
-
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -82,12 +79,12 @@ const SplashScreen = ({navigation}) => {
           </Text>
           <View style={styles.ratingContainer}>
             <Waktu style={styles.ikon} />
-            <Text style={styles.ikoText}>Waktu Kunjungan:</Text>
+            <Text style={styles.ikoText}> Waktu Kunjungan:</Text>
             <Text style={styles.ikoTextWaktu}>Setiap hari</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Uang style={styles.ikon} />
-            <Text style={styles.ikoText}>Harga Tiket Masuk: Free</Text>
+            <Text style={styles.ikoText}> Harga Tiket Masuk: Free</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Map style={styles.ikon} />
@@ -142,7 +139,6 @@ const SplashScreen = ({navigation}) => {
     </ScrollView>
   );
 };
-// };
 
 export default SplashScreen;
 
@@ -220,7 +216,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     marginBottom: 14,
     color: '#C9CC29',
-    marginLeft: 8,
+    marginLeft: 12,
     textDecorationLine: 'underline',
   },
   ikoTextWaktu: {
