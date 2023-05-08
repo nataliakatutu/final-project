@@ -1,38 +1,20 @@
 import React from 'react';
-import {View, Text, FlatList, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
-export default class CommentList extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      comments: [
-        {id: 1, author: 'John', text: 'Great post!'},
-        {id: 2, author: 'Jane', text: 'Thanks for sharing.'},
-        {id: 3, author: 'Bob', text: 'Awesome!'},
-      ],
-    };
-  }
-
-  renderComment = ({item}) => {
-    return (
-      <View style={styles.commentContainer}>
-        <Text style={styles.author}>{item.author}</Text>
-        <Text>{item.text}</Text>
-      </View>
-    );
-  };
-
-  render() {
-    return (
-      <FlatList
-        data={this.state.comments}
-        renderItem={this.renderComment}
-        keyExtractor={item => item.id.toString()}
-      />
-    );
-  }
-}
+const CommentList = () => {
+  return (
+    <View>
+      <Text style={styles.author}>Adzana Shaliha</Text>
+      <Text style={styles.commentContainer}>Bagus banget tempatnya!!</Text>
+      <Text style={styles.author}>Acelia Acelio</Text>
+      <Text style={styles.commentContainer}>
+        Pemandangan yang keren dan tempat yang nyaman.
+      </Text>
+      <Text style={styles.author}>Ashel Apacuyy</Text>
+      <Text style={styles.commentContainer}>Keren bang. *Jempol</Text>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   commentContainer: {
@@ -42,6 +24,9 @@ const styles = StyleSheet.create({
   },
   author: {
     fontWeight: 'bold',
+    top: 10,
     marginBottom: 5,
   },
 });
+
+export default CommentList;
