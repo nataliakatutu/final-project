@@ -13,9 +13,9 @@ import React, {Component} from 'react';
 import {
   Home,
   Search,
+  PulauLembeh,
   IconBack,
   IconLove,
-  BentengMoraya,
   Youtube,
   Waktu,
   Uang,
@@ -29,11 +29,11 @@ import Komentar from './komentar';
 import {useNavigation} from '@react-navigation/native';
 
 const openYouTube = () => {
-  Linking.openURL('https://youtu.be/D7agdRoCigo');
+  Linking.openURL('https://youtu.be/XW5Op06q2yA');
 };
 
 const openMaps = () => {
-  Linking.openURL('https://goo.gl/maps/6X4STY1zPcWBW1bR7');
+  Linking.openURL('https://goo.gl/maps/RxMuV8bNgmuR57kX7');
 };
 
 const SplashScreen = ({navigation}) => {
@@ -48,7 +48,7 @@ const SplashScreen = ({navigation}) => {
       <View style={styles.container}>
         <StatusBar backgroundColor={'#0000'} barStyle={'dark-content'} />
         <View>
-          <BentengMoraya />
+          <PulauLembeh />
           <View
             style={{
               position: 'absolute',
@@ -72,26 +72,24 @@ const SplashScreen = ({navigation}) => {
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Deskripsi</Text>
           <Text style={styles.cardContent}>
-            Benteng Moraya merupakan salah satu destinasi wisata yang ada di
-            Tondano. Bangunan benteng ini layaknya menara pengintai yang
-            memiliki empat lantai. Lantainya yang menjulang kokoh membawa ikatan
-            pada kejayaan Tou Minahasa di masa lalu.
+            Pulau Lembeh adalah sebuah pulau masuk wilayah administrasi Kota
+            Bitung di Provinsi Sulawesi Utara, Indonesia. Pulau Lembeh saat ini
+            secara administratif terbagi dua kecamatan yaitu Kecamatan Lembeh
+            Utara dan Lembeh Selatan
           </Text>
           <View style={styles.ratingContainer}>
             <Waktu style={styles.ikon} />
-            <Text style={styles.ikoText}>Waktu Kunjungan:</Text>
-            <Text style={styles.ikoTextWaktu}>Setiap hari</Text>
+            <Text style={styles.ikoText}> Waktu Kunjungan:</Text>
+            <Text style={styles.ikoTextWaktu}>Jam 06:00-15:00 WITA</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Uang style={styles.ikon} />
-            <Text style={styles.ikoText}>Harga Tiket Masuk: Free</Text>
+            <Text style={styles.ikoText}> Harga Masuk: Rp. 25000</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Map style={styles.ikon} />
             <TouchableOpacity onPress={openMaps}>
-              <Text style={styles.ikoText}>
-                Kec. Tondano Bar., Sulawesi Utara
-              </Text>
+              <Text style={styles.ikoText}>Bitung, Sulawesi Utara</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
@@ -165,7 +163,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
     color: 'white',
     textAlign: 'center',
-    padding: 70,
+    padding: 80,
     textShadowColor: '#000',
     textShadowOffset: {width: 1, height: 1},
     textShadowRadius: 10,
@@ -216,7 +214,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     marginBottom: 14,
     color: '#C9CC29',
-    marginLeft: 8,
+    marginLeft: 12,
     textDecorationLine: 'underline',
   },
   ikoTextWaktu: {

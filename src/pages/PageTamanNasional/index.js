@@ -13,9 +13,9 @@ import React, {Component} from 'react';
 import {
   Home,
   Search,
+  TamanNasional,
   IconBack,
   IconLove,
-  BentengMoraya,
   Youtube,
   Waktu,
   Uang,
@@ -29,11 +29,11 @@ import Komentar from './komentar';
 import {useNavigation} from '@react-navigation/native';
 
 const openYouTube = () => {
-  Linking.openURL('https://youtu.be/D7agdRoCigo');
+  Linking.openURL('https://youtu.be/XW5Op06q2yA');
 };
 
 const openMaps = () => {
-  Linking.openURL('https://goo.gl/maps/6X4STY1zPcWBW1bR7');
+  Linking.openURL('https://goo.gl/maps/nov2fKgtjXYNJabb6');
 };
 
 const SplashScreen = ({navigation}) => {
@@ -48,7 +48,7 @@ const SplashScreen = ({navigation}) => {
       <View style={styles.container}>
         <StatusBar backgroundColor={'#0000'} barStyle={'dark-content'} />
         <View>
-          <BentengMoraya />
+          <TamanNasional />
           <View
             style={{
               position: 'absolute',
@@ -72,26 +72,25 @@ const SplashScreen = ({navigation}) => {
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Deskripsi</Text>
           <Text style={styles.cardContent}>
-            Benteng Moraya merupakan salah satu destinasi wisata yang ada di
-            Tondano. Bangunan benteng ini layaknya menara pengintai yang
-            memiliki empat lantai. Lantainya yang menjulang kokoh membawa ikatan
-            pada kejayaan Tou Minahasa di masa lalu.
+            Taman Nasional Tangkoko merupakan salah satu destinasi wisata
+            menarik dan seru yang ada di Sulawesi Utara. Taman Nasional ini
+            menjadi habitat bagi hewan- hewan endemik yang dilindungi.
           </Text>
           <View style={styles.ratingContainer}>
             <Waktu style={styles.ikon} />
-            <Text style={styles.ikoText}>Waktu Kunjungan:</Text>
-            <Text style={styles.ikoTextWaktu}>Setiap hari</Text>
+            <Text style={styles.ikoText}> Waktu Kunjungan:</Text>
+            <Text style={styles.ikoTextWaktu}>
+              setiap hari, jam 07.00 – 17.00
+            </Text>
           </View>
           <View style={styles.ratingContainer}>
             <Uang style={styles.ikon} />
-            <Text style={styles.ikoText}>Harga Tiket Masuk: Free</Text>
+            <Text style={styles.ikoText}> Harga Masuk: Rp. 150000</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Map style={styles.ikon} />
             <TouchableOpacity onPress={openMaps}>
-              <Text style={styles.ikoText}>
-                Kec. Tondano Bar., Sulawesi Utara
-              </Text>
+              <Text style={styles.ikoText}>Bitung, Sulawesi Utara</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
@@ -216,7 +215,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     marginBottom: 14,
     color: '#C9CC29',
-    marginLeft: 8,
+    marginLeft: 12,
     textDecorationLine: 'underline',
   },
   ikoTextWaktu: {

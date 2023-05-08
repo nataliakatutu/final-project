@@ -21,8 +21,15 @@ import Youtube from './youtube.svg';
 import Map from './Map.svg';
 import Waktu from './Waktu.svg';
 import Uang from './Uang.svg';
+import BukitKasih from './BukitK.svg';
+import Lahendong from './Lahendong.svg';
+import TamanNasional from './TamanNasional.svg';
+
 export {
   Map,
+  TamanNasional,
+  Lahendong,
+  BukitKasih,
   Waktu,
   Uang,
   BukitDoa,

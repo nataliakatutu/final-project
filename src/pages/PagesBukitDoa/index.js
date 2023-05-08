@@ -15,7 +15,7 @@ import {
   Search,
   IconBack,
   IconLove,
-  BentengMoraya,
+  BukitDoa,
   Youtube,
   Waktu,
   Uang,
@@ -29,11 +29,11 @@ import Komentar from './komentar';
 import {useNavigation} from '@react-navigation/native';
 
 const openYouTube = () => {
-  Linking.openURL('https://youtu.be/D7agdRoCigo');
+  Linking.openURL('https://youtu.be/2r3W4By7tB8');
 };
 
 const openMaps = () => {
-  Linking.openURL('https://goo.gl/maps/6X4STY1zPcWBW1bR7');
+  Linking.openURL('https://goo.gl/maps/8hM9DyJoQL1otMgs5');
 };
 
 const SplashScreen = ({navigation}) => {
@@ -48,7 +48,7 @@ const SplashScreen = ({navigation}) => {
       <View style={styles.container}>
         <StatusBar backgroundColor={'#0000'} barStyle={'dark-content'} />
         <View>
-          <BentengMoraya />
+          <BukitDoa />
           <View
             style={{
               position: 'absolute',
@@ -72,26 +72,24 @@ const SplashScreen = ({navigation}) => {
         <View style={styles.card}>
           <Text style={styles.cardTitle}>Deskripsi</Text>
           <Text style={styles.cardContent}>
-            Benteng Moraya merupakan salah satu destinasi wisata yang ada di
-            Tondano. Bangunan benteng ini layaknya menara pengintai yang
-            memiliki empat lantai. Lantainya yang menjulang kokoh membawa ikatan
-            pada kejayaan Tou Minahasa di masa lalu.
+            Bukit Doa Tomohon merupakan salah satu objek wisata alam yang juga
+            menjadi tempat wisata religi. Bukit Doa Mahawu dibuka pertama kali
+            pada tahun 2006, tepatnya tanggal 14 September bertepatan dengan
+            hari raya Salib Suci.
           </Text>
           <View style={styles.ratingContainer}>
             <Waktu style={styles.ikon} />
-            <Text style={styles.ikoText}>Waktu Kunjungan:</Text>
-            <Text style={styles.ikoTextWaktu}>Setiap hari</Text>
+            <Text style={styles.ikoText}> Waktu Kunjungan:</Text>
+            <Text style={styles.ikoTextWaktu}>Jam 09:00-17:00 WITA</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Uang style={styles.ikon} />
-            <Text style={styles.ikoText}>Harga Tiket Masuk: Free</Text>
+            <Text style={styles.ikoText}> Harga Tiket Masuk: Rp. 20.000</Text>
           </View>
           <View style={styles.ratingContainer}>
             <Map style={styles.ikon} />
             <TouchableOpacity onPress={openMaps}>
-              <Text style={styles.ikoText}>
-                Kec. Tondano Bar., Sulawesi Utara
-              </Text>
+              <Text style={styles.ikoText}>Kota Tomohon, Sulawesi Utara</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.ratingContainer}>
@@ -165,7 +163,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Bold',
     color: 'white',
     textAlign: 'center',
-    padding: 70,
+    padding: 90,
     textShadowColor: '#000',
     textShadowOffset: {width: 1, height: 1},
     textShadowRadius: 10,
@@ -216,7 +214,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-Medium',
     marginBottom: 14,
     color: '#C9CC29',
-    marginLeft: 8,
+    marginLeft: 12,
     textDecorationLine: 'underline',
   },
   ikoTextWaktu: {
