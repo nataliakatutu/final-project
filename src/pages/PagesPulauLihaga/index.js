@@ -63,8 +63,7 @@ const SplashScreen = ({navigation}) => {
               <IconBack name="icon-back" size={30} color="#fff" />
             </TouchableOpacity>
             <TouchableOpacity
-              style={{position: 'absolute', top: 20, right: 20}}
-              onPress={() => this.props.navigation.goBack()}>
+              style={{position: 'absolute', top: 20, right: 20}}>
               <IconLove name="icon-love" size={30} color="#fff" />
             </TouchableOpacity>
           </View>

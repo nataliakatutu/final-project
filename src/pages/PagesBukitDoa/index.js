@@ -14,7 +14,7 @@ import {
   Home,
   Search,
   IconBack,
-  IconLove,
+  IconLoveRed,
   BukitDoa,
   Youtube,
   Waktu,
@@ -63,9 +63,8 @@ const SplashScreen = ({navigation}) => {
               <IconBack name="icon-back" size={30} color="#fff" />
             </TouchableOpacity>
             <TouchableOpacity
-              style={{position: 'absolute', top: 20, right: 20}}
-              onPress={() => this.props.navigation.goBack()}>
-              <IconLove name="icon-love" size={30} color="#fff" />
+              style={{position: 'absolute', top: 20, right: 20}}>
+              <IconLoveRed name="icon-love" size={30} color="#fff" />
             </TouchableOpacity>
           </View>
         </View>

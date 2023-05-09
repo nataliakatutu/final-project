@@ -28,7 +28,7 @@ const ProfileScreen = ({navigation}) => {
     }).start();
   }, [animation]);
 
-  const translateY = animation.interpolate({
+  const translateX = animation.interpolate({
     inputRange: [0, 1],
     outputRange: [200, 0],
   });
@@ -36,12 +36,13 @@ const ProfileScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
-        <View style={styles.profileImageContainer}>
+        <Animated.View
+          style={[styles.profileImageContainer, {transform: [{translateX}]}]}>
           <Image
             style={styles.profileImage}
             source={require('../../assets/icons/profil-woman.jpg')}
           />
-        </View>
+        </Animated.View>
         <View style={styles.profileTextContainer}>
           <Text style={styles.profileName}>Sherren Kalalo</Text>
           <Text style={styles.profileEmail}>sherrenhatestaylor@gmail.com</Text>
